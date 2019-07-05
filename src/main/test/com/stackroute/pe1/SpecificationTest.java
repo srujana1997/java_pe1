@@ -16,16 +16,8 @@ public class SpecificationTest {
         System.out.println("After");
         specification=null;
     }
-    @BeforeClass
-    public static void setUpBeforeClass(){
-        System.out.println("BeforeClass");
-    }
-    @AfterClass
-    public static void tearDownAfterClass(){
-        System.out.println("AfterClass");
-    }
     @Test
-    public void givenCharacterIsLowerCaseLetter(){
+    public void givenCharacterShouldBeALowerCaseLetter(){
         //act
         String result=specification.CheckCharacter('a');
 
@@ -33,7 +25,7 @@ public class SpecificationTest {
         assertEquals("lower case letter",result);
     }
     @Test
-    public void givenCharacterIsUpperCaseLetter(){
+    public void givenCharacterShouldBeAUpperCaseLetter(){
         //act
         String result=specification.CheckCharacter('A');
 
@@ -41,22 +33,27 @@ public class SpecificationTest {
         assertEquals("upper case letter",result);
     }
     @Test
-    public void givenCharacterIsDigit(){
+    public void givenCharacterShouldBeADigit(){
         //act
         String result=specification.CheckCharacter('8');
 
         //assert
         assertEquals("digit",result);
     }
-
     @Test
-    public void givenCharacterIsSpecialCharacter(){
+    public void givenCharacterShouldBeASpecialCharacter(){
         //act
         String result=specification.CheckCharacter('@');
 
         //assert
         assertEquals("special character",result);
     }
+    @Test
+    public void givenCharacterShouldNotBeASpecialCharacter(){
+        //act
+        String result=specification.CheckCharacter('A');
 
-
+        //assert
+        assertNotEquals("special character",result);
+    }
 }

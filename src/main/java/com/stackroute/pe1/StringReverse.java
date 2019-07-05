@@ -1,19 +1,12 @@
 package com.stackroute.pe1;
 public class StringReverse {
-    public String stringRev(String word)
-    {
-        try{
-            String rev="";
-            int length=word.length();
-            for(int i=length-1;i>=0;i--)
-            {
-                rev+=word.charAt(i);
-            }
-            return rev;
+    public String stringReverse(String word) {
+        if(word==null||word==""){
+            return "String should not be null or empty";
         }
-       catch (Exception exception)
-       {
-           return "Enter proper string";
-       }
+        StringBuffer result = new StringBuffer(word);
+        result.reverse();
+        //coverting StringBuffer to String
+        return result.toString();
     }
 }

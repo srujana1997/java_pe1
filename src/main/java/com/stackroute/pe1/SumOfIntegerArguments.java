@@ -4,6 +4,7 @@ public class SumOfIntegerArguments {
     {
         int sum=0;
         String[]  arr=numbers.split(" ");
+        //splitting the number
         int[] intarr=new int[arr.length];
         for(int i=0;i<arr.length;i++)
         {

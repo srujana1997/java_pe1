@@ -2,30 +2,22 @@ package com.stackroute.pe1;
 import org.junit.*;
 import static org.junit.Assert.*;
 
-public class OddevenTest {
-    Oddeven oddeven;
+public class OddEvenNumberTest {
+    OddEvenNumber oddevennumber;
     @Before
     public void setUp(){
         System.out.println("Before");
-        oddeven=new Oddeven();
+        oddevennumber=new OddEvenNumber();
     }
     @After
     public void tearDown(){
         System.out.println("After");
-        oddeven=null;
-    }
-    @BeforeClass
-    public static void setUpBeforeClass(){
-        System.out.println("BeforeClass");
-    }
-    @AfterClass
-    public static void tearDownAfterClass(){
-        System.out.println("AfterClass");
+        oddevennumber=null;
     }
     @Test
     public void givenNumberIsEvenAndItIsInBetween20And30(){
         //act
-        String result=oddeven.checking(24);
+        String result=oddevennumber.checking(24);
 
         //assert
         assertEquals("Jerry",result);
@@ -33,7 +25,7 @@ public class OddevenTest {
     @Test
     public void givenNumberIsOddAndItIsInBetween20And30(){
         //act
-        String result=oddeven.checking(23);
+        String result=oddevennumber.checking(23);
 
         //assert
         assertEquals("Tom",result);
@@ -41,7 +33,7 @@ public class OddevenTest {
     @Test
     public void givenNumberIsNotBetween20And30(){
         //act
-        String result=oddeven.checking(44);
+        String result=oddevennumber.checking(44);
 
         //assert
         assertEquals(null,result);

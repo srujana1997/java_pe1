@@ -14,24 +14,16 @@ public class NumberSeriesTest {
         System.out.println("After");
         numberseries=null;
     }
-    @BeforeClass
-    public static void setUpBeforeClass(){
-        System.out.println("BeforeClass");
-    }
-    @AfterClass
-    public static void tearDownAfterClass(){
-        System.out.println("AfterClass");
-    }
     @Test
-    public void GivenNumberIsPositiveNumber(){
+    public void GivenNumberShouldBePositiveNumber(){
         //act
         String result=numberseries.numberN(3);
 
         //assert
-        assertEquals("1 2 2 3 3 3",result);
+        assertEquals("122333",result);
     }
     @Test
-    public void GivenNumberIs0(){
+    public void GivenNumberShouldBe0(){
         //act
         String result=numberseries.numberN(0);
 
@@ -39,12 +31,20 @@ public class NumberSeriesTest {
         assertEquals("",result);
     }
     @Test
-    public void GivenNumberIsNegative(){
+    public void GivenNumberShouldBENegativeNumber(){
         //act
         String result=numberseries.numberN(-3);
 
         //assert
         assertEquals("",result);
+    }
+    @Test
+    public void GivenNumberShouldNotBe0(){
+        //act
+        String result=numberseries.numberN(1);
+
+        //assert
+        assertNotEquals("0",result);
     }
 
 

@@ -15,37 +15,38 @@ public class StringReverseTest {
         System.out.println("After");
         stringreverse=null;
     }
-    @BeforeClass
-    public static void setUpBeforeClass(){
-        System.out.println("BeforeClass");
-    }
-    @AfterClass
-    public static void tearDownAfterClass(){
-        System.out.println("AfterClass");
-    }
+
     @Test
     public void givenStringShouldReturnStringReverse(){
         //act
-        String result=stringreverse.stringRev("srujana");
+        String result=stringreverse.stringReverse("srujana");
 
         //assert
         assertEquals("anajurs",result);
     }
     @Test
-    public void givenNullShouldReturnErrorMessage(){
+    public void givenStringShouldNotReturnStringReverse(){
         //act
-        String result=stringreverse.stringRev(null);
+        String result=stringreverse.stringReverse("srujana");
 
         //assert
-        assertEquals("Enter proper string",result);
+        assertNotEquals("bnajurs",result);
     }
     @Test
-    public void givenEmptyStringShouldReturnEmptyString(){
+    public void givenStringNUllShouldReturnErrorMessage(){
         //act
-        String result=stringreverse.stringRev("");
+        String result=stringreverse.stringReverse(null);
 
         //assert
-        assertEquals("",result);
+        assertEquals("String should not be null or empty",result);
+    }
+    @Test
+    public void givenEmptyStringShouldReturnErrorString(){
+        //act
+        String result=stringreverse.stringReverse("");
+
+        //assert
+        assertEquals("String should not be null or empty",result);
     }
 
 }

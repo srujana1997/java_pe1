@@ -15,16 +15,8 @@ Palindrome palindrome;
         System.out.println("After");
         palindrome=null;
     }
-    @BeforeClass
-    public static void setUpBeforeClass(){
-        System.out.println("BeforeClass");
-    }
-    @AfterClass
-    public static void tearDownAfterClass(){
-        System.out.println("AfterClass");
-    }
     @Test
-    public void givenNumberIsPalindromeAndSumOfEvenNumbersIsGreaterThan25(){
+    public void givenNumberShouldBeAPalindromeAndSumOfEvenNumbersIsGreaterThan25(){
         //act
         String result=palindrome.palindrome(24688642);
 
@@ -32,7 +24,7 @@ Palindrome palindrome;
         assertEquals("palindrome and the sum of even numbers is greater than 25",result);
     }
     @Test
-    public void givenNumberIsPalindromeAndSumOfEvenNumbersIsLessThan25(){
+    public void givenNumberShouldBeAPalindromeAndSumOfEvenNumbersIsLessThan25(){
         //act
         String result=palindrome.palindrome(246642);
 
@@ -40,7 +32,7 @@ Palindrome palindrome;
         assertEquals("palindrome and the sum of even numbers is less than 25",result);
     }
     @Test
-    public void givenNumberIsNotPalindrome(){
+    public void givenNumberShouldNotBeAPalindrome(){
         //act
         String result=palindrome.palindrome(24678642);
 

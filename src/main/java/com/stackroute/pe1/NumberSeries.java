@@ -1,14 +1,14 @@
 package com.stackroute.pe1;
 public class NumberSeries {
-    public String numberN(int num){
-        String result="";
-            for(int i=1;i<=num;i++)
+    public String numberN(int number){
+        StringBuffer result= new StringBuffer("");
+            for(int i=1;i<=number;i++)
             {
                 for(int j=1;j<=i;j++)
                 {
-                    result += " "+ i;
+                    result.append(i);   //appends next values to results
                 }
             }
-            return result.trim();
+            return result.toString();   //coverting StringBuffer to Sting
         }
 }

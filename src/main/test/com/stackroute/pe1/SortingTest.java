@@ -15,49 +15,34 @@ public class SortingTest {
         System.out.println("After");
         sorting=null;
     }
-    @BeforeClass
-    public static void setUpBeforeClass(){
-        System.out.println("BeforeClass");
-    }
-    @AfterClass
-    public static void tearDownAfterClass(){
-        System.out.println("AfterClass");
+    @Test
+    public void givenNumberShouldReturnSortedNumberAndSumShouldBeLessthan15(){
+        //act
+        String result=sorting.sort(234534);
+        //assert
+        assertEquals("Sorted number in non-increasing order " +544332+"Sum of even numbers "+10+"false",result);
     }
     @Test
-    public void givenNumberShouldReturnSortedNumberAndSumBeloeLimit(){
+    public void givenNumberShouldReturnSortedNumberAndSumShouldBeGreaterThan15(){
         //act
-        Sorting.Variable variable=sorting.sort(234534);
+        String result=sorting.sort(264534);
         //assert
-        assertEquals("Sorted number in non-interesting order:" +544332,variable.sortedString);
-        assertEquals("Sum of even numbers: "+10,variable.evenNumSum);
-        assertEquals(false,variable.checkString);
+        assertEquals("Sorted number in non-increasing order " +654432+"Sum of even numbers "+16+"true",result);
     }
     @Test
-    public void givenNumberShouldReturnSortedNumberAndSumAboveLimit(){
+    public void givenNegativeNumberShouldReturnSortedNumberAndSumShouldBeLessthan15(){
         //act
-        Sorting.Variable variable=sorting.sort(234534);
+        String result=sorting.sort(-234534);
         //assert
-        assertEquals("Sorted number in non-interesting order:" +544332,variable.sortedString);
-        assertEquals("Sum of even numbers: "+20,variable.evenNumSum);
-        assertEquals(false,variable.checkString);
+        assertEquals("Sorted number in non-increasing order " +544332+"Sum of even numbers "+10+"false",result);
     }
     @Test
-    public void givenZeroShouldReturnSortedNumberAndSumAboveLimit(){
+    public void givenNegativeNumberShouldNotReturnSortedNumberAndSumShouldBeLessthan15(){
         //act
-        Sorting.Variable variable=sorting.sort(0);
+        String result=sorting.sort(-234534);
         //assert
-        assertEquals("Sorted number in non-interesting order:" +0,variable.sortedString);
-        assertEquals("Sum of even numbers: "+0,variable.evenNumSum);
-        assertEquals(false,variable.checkString);
+        assertNotEquals("Sorted number in non-increasing order " +-544332+"Sum of even numbers "+10+"false",result);
     }
-    @Test
-    public void givenNumberShouldReturnSortedNumberAndSumLowLimit(){
-        //act
-        Sorting.Variable variable=sorting.sort(234534);
-        //assert
-        assertEquals("Sorted number in non-interesting order:" +544332,variable.sortedString);
-        assertEquals("Sum of even numbers: "+10,variable.evenNumSum);
-        assertEquals(false,variable.checkString);
-    }
+
 
 }
